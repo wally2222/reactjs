@@ -30,3 +30,19 @@ class EventBind extends Component {
 }
 
 export default EventBind
+           
+          // App.js
+           
+ import "./styles.css";
+import EventBind from './EventBind'
+
+export default function App() {
+  return (
+    <div className="App">
+      <h3> Code</h3>
+      <EventBind/>
+     
+    </div>
+  );
+}
+

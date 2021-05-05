@@ -3,4 +3,4 @@ Self learning with my freind Hyunhwa! using tutorial codeevolution reactjs.
 tools : 
 * Chromebook
 * Sandboxcode
-* No git 
+* No git installed on my chromoebook

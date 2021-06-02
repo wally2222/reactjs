@@ -1,0 +1,49 @@
+import "./styles.css"; import React, {Component} from 'react'
+ class App extends Component {
+  onclick = () => {
+    console.log(this.firstName.value)
+  }
+
+  onKeyUpHandle = (target, e) => {
+    if(e.keyCode ===13) {
+      switch (target) {
+      case 'firstName' : this.lastName.focus();
+      break;
+      case 'lastName' : this.age.focus();
+      break
+      case 'age' : this.submit.focus();
+      break
+      default :
+      this.firstName.focus();
+
+    }
+  }
+  }
+  
+  render(){
+  return (
+    <div className="App">
+      <div> 
+        <span> First Name : </span>
+        <input ref= {(input) => {this.firstName=input}} type='text' onKeyUp={this.onKeyUpHandle.bind(this, 'firstName')}/>
+      </div>
+      <div> 
+        <span> Last Name : </span>
+        <input ref= {(input) => {this.lastName=input}} type='text'/>
+      </div>
+      <div> 
+        <span> Age : </span>
+        <input ref= {(input) => {this.age=input}} type='text'/>
+      </div>
+      <br/>
+      <div> 
+        
+        <input ref= {(input) => {this.submit=input}} type='submit' value='submit' onClick={this.onclick}/>
+      </div>
+    </div>
+  );
+
+  }
+}
+
+export default App

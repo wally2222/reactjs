@@ -29,16 +29,16 @@ import "./styles.css"; import React, {Component} from 'react'
       </div>
       <div> 
         <span> Last Name : </span>
-        <input ref= {(input) => {this.lastName=input}} type='text'/>
+        <input ref= {(input) => {this.lastName=input}} type='text' onKeyUp={this.onKeyUpHandle.bind(this, 'lastName')}/>
       </div>
       <div> 
         <span> Age : </span>
-        <input ref= {(input) => {this.age=input}} type='text'/>
+        <input ref= {(input) => {this.age=input}} type='text' onKeyUp={this.onKeyUpHandle.bind(this, 'age')}/>
       </div>
       <br/>
       <div> 
         
-        <input ref= {(input) => {this.submit=input}} type='submit' value='submit' onClick={this.onclick}/>
+        <input ref= {(input) => {this.submit=input}} type='submit' value='submit' onClick={this.onclick} onKeyUp={this.onKeyUpHandle.bind(this, 'submit')}/>
       </div>
     </div>
   );

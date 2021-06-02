@@ -1,0 +1,74 @@
+//index.js
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+
+// Importing the Bootstrap CSS
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+ReactDOM.render(<App />, document.getElementById('root'));
+//app.js
+//import "./styles.css";
+import React, {Component}from 'react'
+import Button from "react-bootstrap/Button"
+import Vegeta from './Vegeta'
+
+
+class App extends Component{
+  render(){
+  return (
+    <div className="container text-center">
+      <h5>Goku vs Vegeta </h5>
+      <Button className="btn btn-info"> button </Button>
+      <hr/>
+      <div className="row">
+      <Vegeta/>
+      <button className="btn btn-info"> button </button>
+      </div>
+    </div>
+  );
+}
+}
+export default App
+//app.css
+.header {
+  text-align: center;
+  
+  
+}
+//package;json
+
+{
+  "name": "code-sandbox-examples",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "react": "^17.0.2",
+    "react-bootstrap": "^1.5.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

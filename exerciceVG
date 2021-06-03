@@ -1,0 +1,143 @@
+//import "./styles.css";
+import React, {Component}from 'react'
+import Vegeta from './Vegeta'
+import Goku from './Goku'
+class App extends Component {
+  render(){
+  return (
+    <div className="container text-center">
+      <div className="">
+        <span className="text-center"> Goku vs Vegeta </span> 
+        <br/>
+        <br/>
+        
+      <Vegeta name="vegeta"/> <br/>
+      <Goku name= "goku" />
+    
+      </div>
+    </div>
+  );
+}
+}
+export default App
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+
+// Importing the Bootstrap CSS
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+ReactDOM.render(<App />, document.getElementById('root'));
+
+
+//import "./styles.css";
+
+import React, {Component}from 'react'
+import Button from "react-bootstrap/Button"
+import goku from './goku.png'
+import countHits from './countHits'
+class Goku extends Component{
+  state = {
+    hits : 0
+  }
+
+  addOne = () => {
+    this.setState(prevState => {
+      return {
+        hits: prevState.hits +1
+      }
+    })
+  }
+  render(){
+    const {name} = this.props
+  return (
+    <div className="col">
+
+      <img src={goku} alt="vegeta" width= "200px" height="200px"/>
+      <br/>
+      <Button onClick= {this.addOne}className="btn btn-info m-3"> {this.props.name} hits hits</Button>
+   <table class="table table-striped"> 
+     <thead>
+       <tr>
+         <th scope="col"> coups</th>
+       </tr>
+       
+       </thead>
+     <tbody> 
+       <tr>
+         <td> {this.state.hits}</td>
+         </tr>
+
+     </tbody>
+   </table>
+  
+    </div>
+  );
+}
+}
+export default countHits(Goku)
+
+import React, {Component}from 'react'
+import countHits from './countHits'
+import Button from "react-bootstrap/Button"
+import vegeta from './vegeta.png'
+class Vegeta extends Component{
+  state = {
+    hits : 0
+  }
+
+  addOne = () => {
+    this.setState(prevState => {
+      return {
+        hits: prevState.hits +1
+      }
+    })
+  }
+  render(){
+    const {name} = this.props
+  return (
+    <div className="col">
+
+      <img src={vegeta} alt="vegeta" width= "200px" height="200px"/>
+      <br/>
+      <Button onClick= {this.addOne}className="btn btn-info m-3"> {name} hits hits</Button>
+   <table class="table table-striped"> 
+     <thead>
+       <tr>
+         <th scope="col"> coups</th>
+       </tr>
+       
+       </thead>
+     <tbody> 
+       <tr>
+         <td> {this.state.hits}</td>
+         </tr>
+
+     </tbody>
+   </table>
+  
+    </div>
+  );
+}
+}
+export default countHits(Vegeta)
+
+import React, {Component} from 'react'
+import { render } from 'react-dom'
+
+const countHits = (WrappedComponent) => {
+
+
+  class CountHits extends Component {
+    render() {
+      return ( <WrappedComponent {...this.props}/>)
+    }
+  }
+  return CountHits
+
+}
+
+
+
+export default countHits

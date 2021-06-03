@@ -1,0 +1,20 @@
+import React from "react";
+import ReactDOM from "react-dom";
+import {useState} from 'react'
+
+import "./styles.css";
+
+ function App () {
+  const [ counter , setCounter] = useState(0);
+  const increment = () => {setCounter(counter + 1)}
+  
+    return(
+      <div>
+        <button onClick={increment}>Like</button> <br/>
+        <p>{counter}</p>
+      </div>
+    )
+  } 
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);

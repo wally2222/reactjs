@@ -1,0 +1,74 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.home {
+  min-height: 100vh;
+  background-color : rgb(32, 35, 71);
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center
+  
+}
+
+
+
+import "./styles.css";
+import Nav from './component/Nav'
+import Tweets from './component/Tweets'
+
+
+export default function App() {
+  
+
+  return (
+    <div className="App">
+      
+      <div className = "home">
+        <Nav/>
+        <Tweets/>
+
+        </div>
+      
+    </div>
+  );
+}
+
+import React from "react";
+import Tweet from './Tweet'
+
+const Tweets = (props) => {
+  const tweet = [
+    {name:'deved', tweet: 'react ughh, i need alcool'},
+    {name:'traversy media', tweet: 'whats up guys, i m out take break '},
+    {name : 'webdevevsimplified', tweet : 'hi guy i m simplified the web where is every body'}
+  ]
+
+  return(
+  <section>
+   <p>Hello i have {tweet.length} tweets</p>
+   {tweet.map((tweet)=> (<Tweet name={tweet.name} tweet={tweet.tweet}/>))}
+
+
+   
+  </section>
+);
+}
+
+export default Tweets;
+
+import React from 'react'
+
+const Tweet= (props) => (
+  <div> 
+  <h5> {props.tweet} : by {props.name}</h5>
+
+
+  </div>
+
+
+)
+
+export default Tweet

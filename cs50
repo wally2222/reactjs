@@ -1,0 +1,32 @@
+import "./styles.css";
+import React, {Component} from 'react'
+
+class Hello extends Component {
+  render(){
+  return (
+    <div className="App">
+      
+      <h2>Hello {this.props.name}</h2>
+      <button onClick={this.handleClick}> button</button>
+    </div>
+  );
+}
+handleClick = () => {
+  alert('hi ' + this.props.name)
+}
+}
+
+
+class App extends Component {
+  render(){
+  return (
+    <div className="App">
+      
+      
+      <Hello name= "julia"/>
+    </div>
+  );
+}
+}
+export default App
+

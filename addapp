@@ -1,0 +1,82 @@
+import "./styles.css";
+import React, {Component} from 'react'
+
+class Add extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      num1 : 1,
+      num2 : 1,
+     score : 0,
+      response : "",
+      
+    }
+  }
+  render() {
+
+    if(this.state.score > 5) {
+      return this.renderWin()
+    } else {
+return this.renderProblem()
+    }
+  }
+
+
+  renderProblem() {
+  return (
+    <div className="App">
+     <div> Cheeck that your are personne not robot </div>
+     <h3> {" " + this.state.num1}
+     +
+      {" " + this.state.num1}</h3>
+     <input onKeyPress= {this.onkeypress} onChange= {this.updateResponse}value= {this.state.response}/>
+     <div> Score : {this.state.score}</div>
+
+     current guess : {this.state.response}
+    
+    </div>
+  );
+}
+
+renderWin() {
+  return (<div> congratulation </div>)
+}
+
+updateResponse = (event) =>{
+  this.setState({
+    response : event.target.value
+  })
+}
+onkeypress = (event) => {
+  if(event.key === "Enter") {
+
+    const answer = parseInt(this.state.response) 
+
+    if(this.state.num1 + this.state.num2 === answer){
+// answer is right
+this.setState({score : this.state.score + 1 + "" + "you are person",
+  num1 : Math.ceil(Math.random()*10 ),
+  num2 : Math.ceil(Math.random()*10 ),
+  response: ""
+})
+    } else {
+      // answer is wrong
+      this.setState({score : this.state.score ,
+        response: ""})
+    }
+  }
+}
+}
+
+class App extends Component {
+  render(){
+  return (
+    <div className="App">
+      <Add/>
+      
+    </div>
+  )
+}
+}
+
+export default App

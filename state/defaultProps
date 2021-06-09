@@ -1,0 +1,36 @@
+import "./styles.css"; import React, {Component} from 'react'
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      displayBio : false
+    }
+  }
+  handleChange = () => {
+    this.setState(()=>({
+      displayBio : !this.state.displayBio
+    }))
+  }
+  render(){
+   
+  return (
+    <div className="App">
+      <p> Welcome : I m learning code by my self</p>
+      {
+      (this.state.displayBio)? (<p> using many ressources online thanks a all creator of this content
+        special thanks to {this.props.name}
+      </p>):(<p> </p> )
+
+      }
+
+     <button onClick={this.handleChange}> read more</button>
+    
+    </div>
+  );
+}
+}
+App.defaultProps =  {
+  name : "Bob"
+}
+
+export default App

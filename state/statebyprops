@@ -1,0 +1,29 @@
+import "./styles.css"; import React, {Component} from 'react'
+
+class App extends Component {
+  constructor(props){
+    super(props);
+    this.state ={
+      name: "sky is state and jtpProp is props"
+    }
+  }
+  render(){
+    return (<div style={{border: "solid red"}}> 
+    <br/>
+      <JTP jtpProp = {this.state.name}/>
+      
+      <br/>
+    </div>)
+  }
+}
+class JTP extends Component {
+  render(){
+    return (<div style={{border:"dashed blue"}}>
+      <p> This state & prop example </p>
+      {this.props.jtpProp}
+    </div>)
+  }
+}
+
+
+export default App

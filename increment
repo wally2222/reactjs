@@ -1,0 +1,51 @@
+import { render } from "react-dom";
+import "./styles.css";
+import React, { Component } from "react";
+
+class Counter extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      count : 0
+  
+    }
+  }
+  deincrement= () => {
+    this.setState((state)=>({
+      count : state.count - 1
+
+    }))
+  }
+  render() {
+    return (
+      <div>
+        <p> { this.state.count} </p>
+        <button onClick={this.increment}> + </button>
+        <button onClick={this.deincrement}> - </button>
+         </div>
+    );
+  }
+  increment = () => {this.setState(state=>({count: state.count + 1}))
+}
+}
+class App extends Component {
+  
+ 
+  render() {
+    return (
+      <div className="header">
+        <Counter /> <br/>
+        <Counter /> <br/>
+        <Counter /> <br/>
+        <Counter /> <br/>
+        <Counter /> <br/>
+        <Counter /> <br/>
+          
+       
+      </div>
+    );
+  }
+  
+}
+
+export default App;

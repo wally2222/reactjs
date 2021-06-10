@@ -1,0 +1,22 @@
+import "./styles.css";
+import React from 'react'
+
+function NotificationMsg({name}) {
+    
+    switch(name) {
+      case 'Bob' :
+        return <div>'hi'</div>
+        
+        case 'Marina' :
+        return <div>'hello'</div>
+        
+        default :
+        return null
+    }
+    }
+  NotificationMsg.defaultProps = {
+    name: 'Bob'
+  }
+
+export default NotificationMsg
+

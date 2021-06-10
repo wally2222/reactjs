@@ -1,0 +1,26 @@
+import "./styles.css";
+import React, {Component} from 'react'
+
+import styled from "styled-components";
+
+class App extends Component {
+
+
+
+  render() {
+    const Div =styled.div`margin: 20px; color:red ; border: solid`
+    const Title = styled.h1`font-size: 25px`
+    return(<div> 
+      
+      <Div> hello world</Div>
+
+      <Title> styled H1 big font </Title>
+    </div>)
+  }
+}
+
+
+export default App
+
+
+

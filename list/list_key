@@ -1,0 +1,12 @@
+import "./styles.css";
+import React from 'react'
+function A(){
+const myList = ["Peter", "Bob", "john", "Julia"]
+
+const listItems = myList.map((x, index )=> <li key={index}> {x}</li>)
+return(<div>
+  <ul> {listItems}</ul>
+   </div>)
+
+}
+export default A

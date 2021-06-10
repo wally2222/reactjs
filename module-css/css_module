@@ -1,0 +1,30 @@
+
+
+import "./styles.css";
+import React, {Component} from 'react'
+import styles from './myStyle.module.css'
+
+class App extends Component {
+  render() {
+    return (<div> 
+
+      <h3 className= {styles.mystyle}> hello</h3>
+      
+      <p className={styles.parastyle}> bonjour</p>
+    </div>)
+  }
+}
+
+export default App
+
+myStyle.module.css
+.mystyle{
+  color : red
+
+}
+.parastyle {
+color: forestgreen
+}
+
+
+

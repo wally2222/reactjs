@@ -19,7 +19,7 @@ class SignUp extends Component {
     isLoggedIn : true})}
 
   render(){
-    const isLoggedIn =this.props.isLoggedIn
+    const isLoggedIn =this.state.isLoggedIn
     const login = isLoggedIn? ( <div> <UserLoggin/><button onClick={this.handleClick}> LogIn </button>
     </div>):(<div><GuestLoggin /> <button onClick={this.handleClick}> LogOut</button>
     </div>)

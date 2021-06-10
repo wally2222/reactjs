@@ -1,0 +1,11 @@
+import "./styles.css";
+import React from 'react'
+function A(){
+var numbers = [1,2,3]
+const multiplyNumm = numbers.map(number => {return (number*5 + ".")})
+return(<div>
+  {multiplyNumm}
+   </div>)
+
+}
+export default A

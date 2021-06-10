@@ -3,7 +3,7 @@ import React from 'react'
 function A(){
 const myList = ["Peter", "Bob", "john", "Julia"]
 
-const listItems = myList.map(x => {return <li> {x}</li>})
+const listItems = myList.map(x => <li> {x}</li>)
 return(<div>
   <ul> {listItems}</ul>
    </div>)

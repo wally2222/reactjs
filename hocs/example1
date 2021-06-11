@@ -1,0 +1,23 @@
+import "./styles.css";
+import React from 'react'
+import {useState} from 'react'
+
+ const Home = ()  =>{
+  
+   const [name, setName]=useState("louis")
+  const [age, setAge] =useState("28")
+   const handleClick = () => {
+    setName("makiki") 
+    setAge(23)
+    console.log(name)
+   }
+  return (
+    <div className="App">
+      <h1>{name}</h1> is
+      <h2>{age}</h2>
+      <button onClick={handleClick}> button </button>
+    </div>
+  );
+}
+
+export default Home

@@ -1,0 +1,26 @@
+import React, {Component} from 'react'
+
+class App extends Component {
+state = {
+  todos : ['wally'],
+  addInput :''
+}
+handleClick = ()=> {
+  let todoscopy =this.state.todos.slice()
+  todoscopy.push(this.state.addInput)
+  this.setState({todos: todoscopy , addInput:""})
+
+}
+handleChange = (event) => {this.setState({ addInput : event.target.value })}
+  render() {return (<div>
+    {
+      (this.state.todos.length !== 0)? (this.state.todos.map((x , i)=> <li key={i}> {x}</li>)):(<p> No things todo </p>)
+    }
+    
+    <input onChange= {this.handleChange}value={this.state.addInput}/>
+    <button onClick={this.handleClick}> Add</button>
+    
+     </div>)}
+}
+
+export default App

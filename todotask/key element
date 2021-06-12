@@ -1,0 +1,14 @@
+addTask = () => {
+this.setState(state => ({ tasks: [...state.tasks, state.input] , input : ''
+}))
+}
+
+deleteTask = (index) => {
+this.setState(state =>{
+const tasks = [...this.state.task]; 
+tasks.splice(index, 1);
+
+return {tasks
+}
+})
+}

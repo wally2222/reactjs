@@ -1,0 +1,39 @@
+import "./styles.css"; import React, {Component} from 'react'
+class App extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      editor : true
+    }
+  }
+  switchMode = () => {
+    this.setState(state=>({
+      editor: !state.editor
+    }))
+  }
+  render() {return (<div>
+    {
+    (this.state.editor)? ( <CardEditor switchmode={this.switchMode}/>): (<CardView />)
+    }
+     
+  </div>)
+  }
+}
+class CardEditor extends Component {
+  render() {
+    return (<div>
+       <p>This editor</p>
+   <button onClick={this.props.switchmode}> Go to card view</button></div>)
+  }
+}
+
+
+class CardView extends Component {
+  render() {
+    return (<div> This view <br/><button onClick={this.props.switchmode}>Go to editor view</button></div>)
+  }
+
+}
+export default App
+
+

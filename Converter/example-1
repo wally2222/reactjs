@@ -1,0 +1,33 @@
+import "./styles.css"; import React , {Component} from 'react'
+
+class App extends Component {
+  constructor(props){
+    super(props)
+    this.currencies = ["CAD", "CHF", "AUD", "EU"]
+    this.state = {
+      base: 'US',
+      other : 'EU',
+      currencies : '',
+      value: 0
+    }
+  }
+  render(){ 
+    
+  return (
+  
+    <div className="App">
+    <div> 
+    <select>
+  {this.currencies.map(currency =>  <option> {currency} </option>) }
+   </select>
+    </div>
+    <div> 
+      <select>  </select>
+    </div>
+      
+    <div> </div>
+    </div>
+  );
+}
+}
+export default App

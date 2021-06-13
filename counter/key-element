@@ -1,0 +1,5 @@
+handleChange = () => {
+this.setState( oldstate => ({ 
+count : oldstate.count + 1
+}))
+}

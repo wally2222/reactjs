@@ -1,0 +1,26 @@
+import "./styles.css";
+
+export default function App() {
+const x=navigator.userAgent
+
+var isMobile = /Android|webOs/i.test(navigator.userAgent)
+if(isMobile) {
+  alert("mobile")
+} else {
+  alert("pc")
+}
+  const currencies = ["USD", "CAD","AUD"]
+  handleChange = (event) => {
+    alert(event.target.value)
+  }
+  return (
+    <div className="App">
+      
+      <select onChange={handleChange}>
+        
+          {currencies.map(currency => <option>{currency}</option>)}
+       
+         </select>
+    </div>
+  );
+}
